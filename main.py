@@ -36,8 +36,7 @@ def delete_data(filename):
         tel_book = data.read()
         print(tel_book)
         print("")
-    index_delete_data1 = int(input("Введите номер строки для удаления: "))
-    index_delete_data = index_delete_data1 - 1
+    index_delete_data = int(input("Введите номер строки для удаления: ")) - 1
     tel_book_lines = tel_book.split("\n")
     del_tel_book_lines = tel_book_lines[index_delete_data]
     tel_book_lines.pop(index_delete_data)
@@ -61,11 +60,12 @@ def export_data(filename):
         print(f"Добавлена запись : {num} | {fio} | {phone_number}\n")
 def main():
     print("Выберите одно из действий:")
-    print("1 — Вывести инфо на экран")
-    print("2 — Произвести экпорт данных")
-    print("3 — Произвести изменение данных")
-    print("4 — Произвести удаление данных")
+    print("1 — Открыть телефонную книгу")
+    print("2 — Добавить контакт")
+    print("3 — Изменить контакт")
+    print("4 — Удалить контакт")
     print("0 — Выход из программы")
+
     action = int(input("Действие: "))
     if action == 1:
         show_data('phonebook.txt')
@@ -79,5 +79,4 @@ def main():
         my_choice = 0
         print("До свидания")
 
-#if __name__ == "__main__":
 main()
